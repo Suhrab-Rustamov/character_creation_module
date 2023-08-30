@@ -16,7 +16,7 @@ def attack(char_name: str, char_class: str) -> str:
 
 
 def defence(char_name: str, char_class: str) -> str:
-    """Функция рассчитывает урон блокированный персонажем"""
+    """Функция рассчитывает урон блокированный персонажем."""
     if char_class == 'warrior':
         return (f'{char_name} блокировал {10 + randint(5, 10)} урона')
     if char_class == 'mage':
@@ -40,8 +40,10 @@ def special(char_name: str, char_class: str) -> str:
 
 def start_training(char_name: str, char_class: str) -> str:
     """Функция описывает тренировку.
-    Введенные игроком команды присваиваются переменной cmd.
-    Предложение ввести команду будет повторяться, пока игрок не введет команду skip.
+
+    Введенные игроком команды передаются в переменную cmd.
+    Предложение ввести команду будет повторяться,
+    пока игрок не введет команду skip.
     """
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
@@ -67,6 +69,12 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
+    """Функция отвечает за выбор игрового персонажа.
+
+    Введенное название персонажа передается в переменную char_class.
+    Команда вводимая при подтверждении выбора
+    передается в переменную approve_choice.
+    """
     approve_choice: str = ''
     char_class: str = ''
     while approve_choice != 'y':
